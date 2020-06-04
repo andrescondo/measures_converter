@@ -16,10 +16,10 @@ def GaKg():
 
 
 
-def run():
+def mass_convert():
 
 	while True:
-		option = str(input('''
+		mass = str(input('''
 		===================================
 			C O N V E R T I D O R 
 			Ingrese la medida a convertir
@@ -29,15 +29,28 @@ def run():
 			[s]alir
 			''')).lower()
 
-		if option == '1':
+		if mass == '1':
 			kgAG()
 
-		elif option == '2':
+		elif mass == '2':
 			GaKg()
+
+		elif mass == 's':
+			break
+def run():
+	while True:
+		option = str(input('''
+		==================================
+			Escoga el tipo de conversión
+			[m]asa
+			[v]olumen
+			''')).lower()
+
+		if option == 'm':
+			mass_convert()
 
 		elif option == 's':
 			break
-
 
 
 if __name__ == '__main__':
