@@ -43,7 +43,6 @@ def OnaAG():
 
 
 def mass_convert():
-
 	while True:
 		mass = str(input('''
 		===================================
@@ -74,6 +73,50 @@ def mass_convert():
 
 		elif mass == 's':
 			break
+		else:
+			print('Ingreso un dato invalido')
+
+def cmAL():
+	print('Convertir de centimetros cúbicos a Litros')
+	cm = value()
+	lt = cm * 0.001
+	print(' {} equivale, a {:.3f} Litros'.format(cm, lt)) 
+
+def LAcm():
+	print('Convertir de Litros a centimetros cúbicos')
+	lt = value()
+	cm = lt * 1000
+	print(' {} equivale, a {:.3f} centimetros cúbicos'.format(lt, cm))
+
+
+
+def volume_convert():
+	while True:
+		volume = str(input('''
+		===================================
+			C O N V E R T I D O R 
+			Ingrese la medida a convertir
+
+			[1] centimetro cúbico a Litro
+			[2] de Litros a centimetro cúbico
+
+			[s]alir
+			''')).lower()
+
+		if volume == '1':
+			cmAL()
+
+		elif volume == '2':
+			LAcm()
+
+		elif volume == 's':
+			break
+		else:
+			print('Ingreso un dato invalido')
+
+
+
+
 def run():
 	while True:
 		option = str(input('''
@@ -87,9 +130,14 @@ def run():
 
 		if option == 'm':
 			mass_convert()
+		elif option == 'v':
+			volume_convert()
+
 
 		elif option == 's':
 			break
+		else:
+			print('Ingreso un dato invalido')
 
 
 if __name__ == '__main__':
