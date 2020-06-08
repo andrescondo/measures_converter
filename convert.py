@@ -1,53 +1,21 @@
 # -*- coding: utf-8 -*-
+from mass import Mass
+from volume import Volume
+from length import Length
 
-def value():
-	value = float(input('Ingrese el valor a convertir: '))
-	return value
-
-def kgAG():
-	print('Convertir de kg a G')
-	kg = value()
-	g = kg * 1000
-	print(' {} Kilogramos, equivale a {:.3f} Gramos'.format(kg,g))
-
-def GaKg():
-	print('Convertir de Gramo a kg')
-	g = value()
-	kg = g / 1000
-	print(' {} Gramo, equivale a {:.3f} Kilogramos'.format(g,kg))
-
-def KgaLb():
-	print('Convertir de Kilogramos a libras')
-	kg = value()
-	lb = kg / 2.2                   #reducir el n# de decimales
-	print(' {} Kilogramos, equivale a {:.3f} libras'.format(kg, lb))
-
-def LbaKg():
-	print('Convertir de Libras a Kilogramos')
-	lb = value()
-	kg = lb * 0.453
-	print(' {} Libras, equivale a {:.3f} Kilogramos'.format(lb, kg))
-
-def GaOnz():
-	print('Convertir de Gramos a Onzas')
-	g = value()
-	onz = g * 0.035
-	print(' {} Gramos, equivale a {:.3f} Onzas'.format(g, onz))
-
-def OnaAG():
-	print('Convertir de Onzas a Gramos')
-	onz = value()
-	g = onz * 28.3495
-	print(' {} Onzas, equivale a {:.3f} Gramos'.format(onz. g))
-
+def title():
+	title = print('''
+		Ingrese la medida a convertir 
+		----------------------------------
+		''')
 
 
 def mass_convert():
+	mass = Mass()
+
 	while True:
-		mass = str(input('''
-		===================================
-			C O N V E R T I D O R 
-			Ingrese la medida a convertir
+		title()
+		option = str(input('''
 			[1] Kg a G
 			[2] G a Kg
 			[3] Kg a Lb
@@ -58,61 +26,76 @@ def mass_convert():
 			[s]alir
 			''')).lower()
 
-		if mass == '1':
-			kgAG()
-		elif mass == '2':
-			GaKg()
-		elif mass == '3':
-			KgaLb()
-		elif mass == '4':
-			LbaKg()
-		elif mass == '5':
-			GaOnz()
-		elif mass == '6':
-			OnaAG()
+		if option == '1':
+			mass.kgAG()
+		elif option == '2':
+			mass.GaKg()
+		elif option == '3':
+			mass.KgaLb()
+		elif option == '4':
+			mass.LbaKg()
+		elif option == '5':
+			mass.GaOnz()
+		elif option == '6':
+			mass.OnaAG()
 
-		elif mass == 's':
+		elif option == 's':
 			break
 		else:
 			print('Ingreso un dato invalido')
 
-def cmAL():
-	print('Convertir de centimetros cúbicos a Litros')
-	cm = value()
-	lt = cm * 0.001
-	print(' {} equivale, a {:.3f} Litros'.format(cm, lt)) 
-
-def LAcm():
-	print('Convertir de Litros a centimetros cúbicos')
-	lt = value()
-	cm = lt * 1000
-	print(' {} equivale, a {:.3f} centimetros cúbicos'.format(lt, cm))
-
 
 
 def volume_convert():
+	volume = Volume()
 	while True:
-		volume = str(input('''
-		===================================
-			C O N V E R T I D O R 
-			Ingrese la medida a convertir
-
+		title()
+		option = str(input('''
 			[1] centimetro cúbico a Litro
 			[2] de Litros a centimetro cúbico
 
 			[s]alir
 			''')).lower()
 
-		if volume == '1':
-			cmAL()
+		if option == '1':
+			volume.cmAL()
 
-		elif volume == '2':
-			LAcm()
+		elif option == '2':
+			volume.LAcm()
 
-		elif volume == 's':
+		elif option == 's':
 			break
 		else:
 			print('Ingreso un dato invalido')
+
+
+
+def length_convert():
+	length = Length()
+	while  True:
+		title()
+		option = str(input('''
+			[1] m a Km
+			[2] m a cm
+			[3] cm a m
+			[4] Km a m
+			[5] m a ft
+			[6] cm a in
+			[7] mi a Km
+
+			[s]alir
+
+			''')).lower()
+
+		if option == '1':
+			length.mAKm()
+		elif option == '2':
+			length.mACm()
+		elif option == '3':
+			length.cmAM()
+		elif option == '4':
+			length.kmAM()
+
 
 
 
@@ -121,9 +104,12 @@ def run():
 	while True:
 		option = str(input('''
 		==================================
+			C O N V E R T I D O R 
+		==================================
 			Escoga el tipo de conversión
 			[m]asa
 			[v]olumen
+			[l]ongitud
 
 			[s]alir
 			''')).lower()
@@ -132,6 +118,8 @@ def run():
 			mass_convert()
 		elif option == 'v':
 			volume_convert()
+		elif option == 'l':
+			length_convert()
 
 
 		elif option == 's':
@@ -142,3 +130,4 @@ def run():
 
 if __name__ == '__main__':
 	run()
+
