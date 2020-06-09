@@ -6,9 +6,8 @@ from length import Length
 def title():
 	title = print('''
 		Ingrese la medida a convertir 
-		----------------------------------
-		''')
-
+		----------------------------------''')
+	
 
 def mass_convert():
 	mass = Mass()
@@ -95,9 +94,17 @@ def length_convert():
 			length.cmAM()
 		elif option == '4':
 			length.kmAM()
+		elif option == '5':
+			length.mAFt()
+		elif option == '6':
+			length.cmAIn()
+		elif option == '7':
+			length.miAKm()
+		elif option == 's':
+			break
 
-
-
+		else:
+			print('Ingreso de dato no valido')
 
 
 def run():
@@ -120,8 +127,6 @@ def run():
 			volume_convert()
 		elif option == 'l':
 			length_convert()
-
-
 		elif option == 's':
 			break
 		else:
