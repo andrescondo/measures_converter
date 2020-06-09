@@ -1,41 +1,42 @@
 def value():
 	value = float(input('Ingrese el valor a convertir: '))
 	return value
+M = ('Gramos', 'Kilogramos', 'Libras', 'Onzas')
 
 class Mass:
 	def kgAG(self):
-		print('Convertir de kg a G')
+		print('Convertir de {} a {}'.format(M[1], M[0]))
 		kg = value()
 		g = kg * 1000
-		print(' {} Kilogramos, equivale a {:.3f} Gramos'.format(kg,g))
+		print(' {} {}, equivale a {:.3f} {}'.format(kg, M[1],g,M[0]))
 
 	def GaKg(self):
-		print('Convertir de Gramo a kg')
+		print('Convertir de {} a {}'.format(M[0],M[1]))
 		g = value()
 		kg = g / 1000
-		print(' {} Gramo, equivale a {:.3f} Kilogramos'.format(g,kg))
+		print(' {} {}, equivale a {:.3f} {}'.format(g,M[0],kg,M[1]))
 
 	def KgaLb(self):
-		print('Convertir de Kilogramos a libras')
+		print('Convertir de {} a {}'.format(M[1],M[2]))
 		kg = value()
 		lb = kg / 2.2                   #reducir el n# de decimales
-		print(' {} Kilogramos, equivale a {:.3f} libras'.format(kg, lb))
+		print(' {} {}, equivale a {:.3f} {}'.format(kg,M[1], lb,M[2]))
 
 	def LbaKg(self):
-		print('Convertir de Libras a Kilogramos')
+		print('Convertir de {} a {}',format(M[2],M[1]))
 		lb = value()
 		kg = lb * 0.453
-		print(' {} Libras, equivale a {:.3f} Kilogramos'.format(lb, kg))
+		print(' {} {}, equivale a {:.3f} {}'.format(lb,M[2] ,kg,M[1]))
 
 	def GaOnz(self):
-		print('Convertir de Gramos a Onzas')
+		print('Convertir de {} a {}'.format(M[1],M[3]))
 		g = value()
 		onz = g * 0.035
-		print(' {} Gramos, equivale a {:.3f} Onzas'.format(g, onz))
+		print(' {} {}, equivale a {:.3f} {}'.format(g,M[1], onz,M[3]))
 
 	def OnaAG(self):
-		print('Convertir de Onzas a Gramos')
+		print('Convertir de {} a {}'.format(M[3],M[0]))
 		onz = value()
 		g = onz * 28.3495
-		print(' {} Onzas, equivale a {:.3f} Gramos'.format(onz. g))
+		print(' {} {}, equivale a {:.3f} {}'.format(onz,M[3], g,M[0]))
 
