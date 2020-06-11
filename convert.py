@@ -21,6 +21,7 @@ def mass_convert():
 			[4] Lb a Kg
 			[5] G a Onz
 			[6] Onz a G
+			[7] Kg a Tn
 
 			[s]alir
 			''')).lower()
@@ -37,6 +38,8 @@ def mass_convert():
 			mass.GaOnz()
 		elif option == '6':
 			mass.OnaAG()
+		elif option == '7':
+			mass.kgATn()
 
 		elif option == 's':
 			break
@@ -51,17 +54,18 @@ def volume_convert():
 		title()
 		option = str(input('''
 			[1] centimetro cúbico a Litro
-			[2] de Litros a centimetro cúbico
+			[2] Litros a centimetro cúbico
+			[3] Milimetros cúbicos a Litros
 
 			[s]alir
 			''')).lower()
 
 		if option == '1':
 			volume.cmAL()
-
 		elif option == '2':
 			volume.LAcm()
-
+		elif option == '3':
+			volume.mcAL()
 		elif option == 's':
 			break
 		else:
@@ -79,8 +83,10 @@ def length_convert():
 			[3] cm a m
 			[4] Km a m
 			[5] m a ft
-			[6] cm a in
-			[7] mi a Km
+			[6] ft a m
+			[7] cm a in
+			[8] in a cm
+			[9] mi a Km
 
 			[s]alir
 
@@ -97,8 +103,12 @@ def length_convert():
 		elif option == '5':
 			length.mAFt()
 		elif option == '6':
-			length.cmAIn()
+			length.ftAM()
 		elif option == '7':
+			length.cmAIn()
+		elif option == '8':
+			length.inACm()
+		elif option == '9':
 			length.miAKm()
 		elif option == 's':
 			break
