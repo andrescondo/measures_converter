@@ -1,7 +1,14 @@
 def value():
-	value = float(input('Ingrese el valor a convertir: '))
-	return value
-M = ('Gramos', 'Kilogramos', 'Libras', 'Onzas')
+	while True:
+		value = input('Ingrese el valor a convertir: ')
+		try:
+			value = float(value)
+			return value
+		except ValueError:
+			print('Ingrese números')
+	
+	
+M = ('Gramos', 'Kilogramos', 'Libras', 'Onzas', 'Toneladas')
 
 class Mass:
 	def kgAG(self):
@@ -40,3 +47,8 @@ class Mass:
 		g = onz * 28.3495
 		print(' {} {}, equivale a {:.3f} {}'.format(onz,M[3], g,M[0]))
 
+	def kgATn(self):
+		print('Convertir de {} a {}'.format(M[1], M[4]))
+		kg = value()
+		tn = kg * 0.001
+		print(' {} {}, equivale a {:.3f} {}'.format(kg,M[1],tn, M[4]))

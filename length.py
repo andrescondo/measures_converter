@@ -1,7 +1,13 @@
-
 def value():
-	value = float(input('Ingrese el valor a convertir: '))
-	return value
+	while True:
+		value = input('Ingrese el valor a convertir: ')
+		try:
+			value = float(value)
+			return value
+		except ValueError:
+			print('Ingrese números')
+
+	
 M = ('Centimetros','Metros','Kilometros', 'Pies', 'Pulgadas', 'Millas')
 
 class Length:
