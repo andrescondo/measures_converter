@@ -30,7 +30,7 @@ class Mass:
 		print(' {} {}, equivale a {:.3f} {}'.format(kg,M[1], lb,M[2]))
 
 	def LbaKg(self):
-		print('Convertir de {} a {}',format(M[2],M[1]))
+		print('Convertir de {} a {}'.format(M[2],M[1]))
 		lb = value()
 		kg = lb * 0.453
 		print(' {} {}, equivale a {:.3f} {}'.format(lb,M[2] ,kg,M[1]))

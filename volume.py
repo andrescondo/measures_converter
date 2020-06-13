@@ -21,7 +21,7 @@ class Volume:
 		cm = lt * 1000
 		print(' {} equivale, a {:.3f} {}'.format(lt, cm,L[0]))
 
-	def mcaAL(self):
+	def mcAL(self):
 		print('Convertir de {} a {}'.format(L[2], L[1]) )
 		mc = value()
 		l = mc * 0.001
